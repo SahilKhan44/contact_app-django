@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+{% load static %}
+
+<html>
+<head>
+    <title>Contact List</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'contacts/style.css' %}">
+</head>
+<body>
+    <h1>Contact List</h1>
+    <ul>
+        {% for contact in contacts %}
+            <li><a href="{% url 'contact_detail' contact.pk %}">{{ contact.first_name }} {{ contact.last_name }}</a></li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'contact_new' %}">Add New Contact</a>  <!-- Link to add a new contact -->
+</body>
+</html>

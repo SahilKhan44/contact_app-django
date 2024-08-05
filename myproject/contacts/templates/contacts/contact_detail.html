@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Contact Detail</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'contacts/style.css' %}">
+</head>
+<body>
+    
+    <h1>{{ contact.first_name }} {{ contact.last_name }}</h1>
+    <p>Twitter:  <a href="{{ contact.twitter }}">{{ contact.twitter }}</a></p>
+    <p>Avatar URL: <a href="{{ contact.avatar_url }}">{{ contact.avatar_url }}</a></p>
+    <p>Notes: {{ contact.notes }}</p>
+    <a href="{% url 'contact_edit' contact.pk %}">Edit</a>
+    <a href="{% url 'contact_list' %}">Back to list</a>
+</body>
+</html>
